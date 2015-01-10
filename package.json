@@ -1,0 +1,22 @@
+{
+  "name": "saleae-export-converter",
+  "version": "1.0.0",
+  "description": "Convert saleae exported CSV of Serial comms into more digestable format",
+  "main": "desaleae.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remasis/saleae-export-converter.git"
+  },
+  "keywords": [
+    "saleae"
+  ],
+  "author": "Corey Thuen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/remasis/saleae-export-converter/issues"
+  },
+  "homepage": "https://github.com/remasis/saleae-export-converter"
+}
