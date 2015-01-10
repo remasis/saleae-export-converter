@@ -1,4 +1,5 @@
 var fs = require('fs');
+var util = require('util');
 
 console.log(process.argv[2]);
 if (process.argv.length !== 4) {
@@ -26,7 +27,7 @@ function fileToStruct(file, src) {
 		var thistime = parseFloat(linedata[0]);
 		var hex;
 
-		if (thistime - lasttime > 0.004) {
+		if (thistime - lasttime > 0.004 || lasttime === 0) {
 			//new entry
 			entries.push({
 				timeOffset: thistime,
@@ -57,14 +58,14 @@ alldata.sort(function(a, b) {
 });
 
 alldata.forEach(function(item, ind) {
-/*	var line;
-	if (item.src === process.argv[2]) {
-		line = "\x1b[32m"; //grn
-	} else {
-		line = "\x1b[31m"; //red
-	}
-	console.log(line += item.data.toString().trim());
-	*/
+	/*	var line;
+		if (item.src === process.argv[2]) {
+			line = "\x1b[32m"; //grn
+		} else {
+			line = "\x1b[31m"; //red
+		}
+		console.log(line += item.data.toString().trim());
+		*/
 	console.log(item.src + '(' + item.timeOffset + '):\t' + item.data.toString().trim());
 });
 
