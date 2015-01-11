@@ -1,9 +1,9 @@
 var fs = require('fs');
 var util = require('util');
 
-console.log(process.argv[2]);
 if (process.argv.length !== 4) {
 	console.log("Usage: node <thisscript.js> file1 file2");
+	process.exit();
 }
 
 var file1, file2;
